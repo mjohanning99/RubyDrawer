@@ -14,6 +14,7 @@ class Window < Gosu::Window
 		@paint = true
 		@deleting = false
 		@font = Gosu::Font.new(self, Gosu::default_font_name, 20)
+		@colour_translate = {:black => "Schwarz", :red => "Rot", :blue => "Blau", :green => "Gruen", :orange => "Orange", :cyan => "Hellblau", :yellow => "Gelb", :turquoise => "Tuerkis", :brown => "Braun", :tyrian => "Tyrian"}
 	end
 
 
@@ -26,8 +27,8 @@ class Window < Gosu::Window
 
 	def draw
 		@font.draw("Brush Size: #{$size}", 10, 580, 3, 1.0, 1.0, 0xff00ffff)
-		@font.draw("Colour: #{$colour}", 200, 580, 3, 1.0, 1.0, 0xff00ffff)
-		@font.draw("Colours: black, red, blue, green, orange, cyan, yellow, turquoise, tyrian, brown", 360, 580, 3, 1.0, 1.0, 0xff00ffff)
+		@font.draw("Colour: #{$colour}/#{@colour_translate[$colour]}", 155, 580, 3, 1.0, 1.0, 0xff00ffff)
+		@font.draw("Colours: black, red, blue, green, orange, cyan, yellow, turquoise, tyrian, brown", 370, 580, 3, 1.0, 1.0, 0xff00ffff)
 		if @paint == true then
 		@cursor.draw(mouse_x, mouse_y - 16, 1)
 	    end
