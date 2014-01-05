@@ -87,10 +87,6 @@ class Window < Gosu::Window
 			   end
 		    end
 		end
-		
-                @background.paint {
-		      circle 20, 0, 5000, :color => $colour1, :fill => true
-		 }
 		 
 		if button_down? Gosu::MsLeft then
 		@paint = true
