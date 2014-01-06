@@ -7,6 +7,9 @@ Press the left mouse button to draw.
 Press the right mouse button to erease things.
 Press the number 1, 2, 3 .. 0 on your keyboard, to change the colour you draw with (current colour can be seen at the bottom of the screen)
 Mousewheel Up and Down controls the brush size. 
+Press the middle mouse button to clear the whole screen.
+There is one example program, that you can use to find out how the gem 'TexPlay' works ;)
+Feel free to add things.
 
 Hope you enjoy this program.
 Happy Coding,
