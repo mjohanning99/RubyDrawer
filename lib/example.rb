@@ -4,9 +4,10 @@ require 'texplay'
 
 class TexWindow < Gosu::Window
 	def initialize
-		$WIDTH = 800 #Screen Width
-		$HEIGHT = 600 #Screen Height
+		$WIDTH = 800 #Screen Width (not larger than 1022)
+		$HEIGHT = 600 #Screen Height (not larger than 1022)
 		@size = 3  #The largest size that dots shall have
+		$filled = false #Filled dots? (only use 'true' or 'false' values)
 
 		super $WIDTH, $HEIGHT, true
 		@background = TexPlay.create_blank_image(self, $WIDTH, $HEIGHT)
@@ -37,7 +38,7 @@ class TexWindow < Gosu::Window
         
         $size = rand(@size)
 		@background.paint {
-		    circle $x, $y, $size, :color => $colour, :fill => true
+		    circle $x, $y, $size, :color => $colour, :fill => $filled
 			#line $x, $y, $x, $size, :color => $colour, :fill => true
  		}
 end
