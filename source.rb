@@ -38,25 +38,25 @@ class Window < Gosu::Window
 		@background.draw(0, 0, 0)
 		
 		#Selecting colour via the Keyboard 
-		if button_down? Gosu::Kb1 then $colour = :black end
-		if button_down? Gosu::Kb2 then $colour = :red end
-		if button_down? Gosu::Kb3 then $colour = :blue end
-		if button_down? Gosu::Kb4 then $colour = :green end
-		if button_down? Gosu::Kb5 then $colour = :orange end
-		if button_down? Gosu::Kb6 then $colour = :cyan end
-		if button_down? Gosu::Kb7 then $colour = :yellow end
-		if button_down? Gosu::Kb8 then $colour = :turquoise end
-		if button_down? Gosu::Kb9 then $colour = :tyrian end
-		if button_down? Gosu::Kb0 then $colour = :brown end
+		$colour = :black if button_down? Gosu::Kb1
+		$colour = :red if button_down? Gosu::Kb2
+		$colour = :blue if button_down? Gosu::Kb3
+		$colour = :green if button_down? Gosu::Kb4
+		$colour = :orange if button_down? Gosu::Kb5
+		$colour = :cyan if button_down? Gosu::Kb6
+		$colour = :yellow if button_down? Gosu::Kb7
+		$colour = :turquoise if button_down? Gosu::Kb8
+		$colour = :tyrian if button_down? Gosu::Kb9
+		$colour = :brown if button_down? Gosu::Kb0
 
 
 		$x = mouse_x
 		$y = mouse_y
 		def button_down(id)
-			if id == Gosu::MsWheelUp then $size += 1 end
-			if id == Gosu::MsWheelDown then $size -= 1 end
-		        if id == Gosu::KbUp then $size += 1 end
-		        if id == Gosu::KbDown then $size -= 1 end
+		        $size += 1 if id == Gosu::MsWheelUp
+		        $size -= 1 if id == Gosu::MsWheelDown
+		        $size += 1 if id == Gosu::KbUp
+		        $size -= 1 if id == Gosu::KbDown
 		        	
 		    if id == Gosu::KbF then
 		    puts "Colours: green, red, blue, black, orange, cyan, purple, yellow, turquoise, tyrian, brown, yellow"
